@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/fragmentBackgroung"
+    tools:context=".Fragments.PdfFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_bg">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="30dp">
+            <ImageView
+                android:id="@+id/pdfBack"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/left_arrow"
+                app:tint="@color/white"/>
+            <TextView
+                android:id="@+id/pdfName"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Digital Education"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:layout_marginEnd="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_marginHorizontal="10dp"
+         android:layout_marginBottom="30dp"
+         android:layout_marginTop="15dp"
+         android:background="@drawable/pdf_bg"
+         android:padding="3dp">
+         <WebView
+             android:id="@+id/webview"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentTop="true"
+
+             />
+         <androidx.cardview.widget.CardView
+             android:layout_width="70dp"
+             android:layout_height="70dp"
+             app:cardCornerRadius="20dp"
+             app:cardElevation="0dp"
+             android:layout_marginTop="5dp"
+             android:layout_marginEnd="5dp"
+             app:cardBackgroundColor="@color/white"
+             android:layout_alignParentTop="true"
+             android:layout_alignParentEnd="true"
+             />
+     </RelativeLayout>
+
+
+</LinearLayout>
