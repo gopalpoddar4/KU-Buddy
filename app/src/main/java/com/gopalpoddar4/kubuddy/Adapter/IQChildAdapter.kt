@@ -6,15 +6,16 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.gopalpoddar4.kubuddy.Adapter.PYQChildAdapter.ChildViewHolder
 import com.gopalpoddar4.kubuddy.Interface.OnChildItemClickListner
 import com.gopalpoddar4.kubuddy.Models.ChildModel
 import com.gopalpoddar4.kubuddy.R
 
-class NoteChildAdapter(private val items:List<ChildModel>,private val listner: OnChildItemClickListner):RecyclerView.Adapter<NoteChildAdapter.ChildViewHolder>() {
+class IQChildAdapter (private val items:List<ChildModel>, private val listner: OnChildItemClickListner):RecyclerView.Adapter<IQChildAdapter.ChildViewHolder>(){
 
     class ChildViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
-        val childName:TextView=itemView.findViewById(R.id.childSubjectName)
-        val layoout:CardView=itemView.findViewById(R.id.ChildLayout)
+        val childName: TextView =itemView.findViewById(R.id.childSubjectName)
+        val layoout: CardView =itemView.findViewById(R.id.ChildLayout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildViewHolder {
@@ -29,6 +30,5 @@ class NoteChildAdapter(private val items:List<ChildModel>,private val listner: O
     override fun onBindViewHolder(holder: ChildViewHolder, position: Int) {
         val temp:ChildModel=items[position]
         holder.childName.text=temp.subjectName
-        holder.layoout.setOnClickListener {listner.onChildItemClick(temp)}
-    }
+        holder.layoout.setOnClickListener{listner.onChildItemClick(temp)}    }
 }

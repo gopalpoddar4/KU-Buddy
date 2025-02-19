@@ -55,16 +55,19 @@
         android:layout_height="wrap_content"
         android:text="Bsc.IT"
         android:textSize="16dp"
+        android:fontFamily="@font/archivo_medium"
         android:layout_marginTop="5dp"
         android:textColor="@color/white"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Semester 2"
-        android:layout_marginBottom="35dp"
         android:layout_marginTop="3dp"
-        android:textSize="16sp"
-        android:textColor="@color/white"/>
+        android:layout_marginBottom="35dp"
+        android:fontFamily="@font/archivo_medium"
+        android:text="Semester 2"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
 </LinearLayout>
 
     <TextView
@@ -73,10 +76,10 @@
         android:text="Important Section"
         android:paddingHorizontal="22dp"
         android:textColor="@color/black"
-        android:textStyle="bold"
+        android:fontFamily="@font/archivo_bold"
         android:textSize="20sp"
-        android:layout_marginBottom="7dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="7dp"
          />
 
     <GridLayout
@@ -110,10 +113,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Notes"
+                    android:fontFamily="@font/archivo_bold"
                     android:textStyle="bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
 
@@ -145,10 +149,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Syllabus"
+                    android:fontFamily="@font/archivo_bold"
                     android:textStyle="bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
             <!-- Tumhara Icon aur Text yaha add karo -->
@@ -180,9 +185,10 @@
                     android:layout_height="wrap_content"
                     android:text="Questions"
                     android:textStyle="bold"
+                    android:fontFamily="@font/archivo_bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
             <!-- Tumhara Icon aur Text yaha add karo -->
@@ -212,10 +218,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Task"
+                    android:fontFamily="@font/archivo_bold"
                     android:textStyle="bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
 
@@ -247,10 +254,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Exam Date"
+                    android:fontFamily="@font/archivo_bold"
                     android:textStyle="bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
             <!-- Tumhara Icon aur Text yaha add karo -->
@@ -282,9 +290,10 @@
                     android:layout_height="wrap_content"
                     android:text="PYQ"
                     android:textStyle="bold"
+                    android:fontFamily="@font/archivo_bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
             <!-- Tumhara Icon aur Text yaha add karo -->
@@ -315,9 +324,10 @@
                     android:layout_height="wrap_content"
                     android:text="Exam News"
                     android:textStyle="bold"
+                    android:fontFamily="@font/archivo_bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
             <!-- Tumhara Icon aur Text yaha add karo -->
@@ -348,9 +358,10 @@
                     android:layout_height="wrap_content"
                     android:text="Updates"
                     android:textStyle="bold"
+                    android:fontFamily="@font/archivo_bold"
                     android:layout_marginStart="3dp"
                     android:textColor="@color/black"
-                    android:textSize="20sp"/>
+                    android:textSize="19sp"/>
 
             </LinearLayout>
             <!-- Tumhara Icon aur Text yaha add karo -->
@@ -368,17 +379,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recommended notes"
+        android:text="Recommended Notes"
+        android:fontFamily="@font/archivo_bold"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        />
     <TextView
         android:id="@+id/noteViewAll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="View all"
         android:layout_marginEnd="5dp"
-        android:textStyle="normal"
+        android:fontFamily="@font/archivo_medium"
         android:textSize="16sp"
         android:gravity="end"
         android:textColor="@color/colorPrimary"/>
@@ -392,10 +404,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recommended questions"
+        android:text="Recommended Questions"
         android:paddingHorizontal="22dp"
         android:textColor="@color/black"
-        android:textStyle="bold"
+        android:fontFamily="@font/archivo_bold"
         android:textSize="20sp"
         android:layout_marginBottom="7dp"
         android:layout_marginTop="15dp"

@@ -8,13 +8,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gopalpoddar4.kubuddy.Adapter.NoteRecommendAdapter
-import com.gopalpoddar4.kubuddy.Models.NoteModel
-import com.gopalpoddar4.kubuddy.Models.RecomendNoteModel
+import com.gopalpoddar4.kubuddy.Models.RecommendModel
 import com.gopalpoddar4.kubuddy.R
 
 
@@ -30,8 +28,8 @@ lateinit var ExamNewsButton:CardView
 lateinit var PYQButton:CardView
 
 lateinit var recomendNoteAdapter:NoteRecommendAdapter
-lateinit var recomendNoteModel: RecomendNoteModel
-lateinit var noteList: ArrayList<RecomendNoteModel>
+lateinit var recomendNoteModel: RecommendModel
+lateinit var noteList: ArrayList<RecommendModel>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -81,10 +79,10 @@ lateinit var noteList: ArrayList<RecomendNoteModel>
         rcvRecomendNote.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
 
         noteList= arrayListOf(
-            RecomendNoteModel(R.drawable.pic1,"English"),
-            RecomendNoteModel(R.drawable.pic2,"Hindi"),
-            RecomendNoteModel(R.drawable.pic3,"Science"),
-            RecomendNoteModel(R.drawable.pic4,"Biology")
+            RecommendModel(R.drawable.pic1,"English"),
+            RecommendModel(R.drawable.pic2,"Hindi"),
+            RecommendModel(R.drawable.pic3,"Science"),
+            RecommendModel(R.drawable.pic4,"Biology")
         )
         recomendNoteAdapter=NoteRecommendAdapter(noteList)
 

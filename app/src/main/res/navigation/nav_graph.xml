@@ -40,12 +40,20 @@
         android:id="@+id/PYQFragment"
         android:name="com.gopalpoddar4.kubuddy.Fragments.PYQFragment"
         android:label="fragment_p_y_q"
-        tools:layout="@layout/fragment_p_y_q" />
+        tools:layout="@layout/fragment_p_y_q" >
+        <action
+            android:id="@+id/action_PYQFragment_to_pdfFragment"
+            app:destination="@id/pdfFragment" />
+    </fragment>
     <fragment
         android:id="@+id/syllabusFragment"
         android:name="com.gopalpoddar4.kubuddy.Fragments.SyllabusFragment"
         android:label="fragment_syllabus"
-        tools:layout="@layout/fragment_syllabus" />
+        tools:layout="@layout/fragment_syllabus" >
+        <action
+            android:id="@+id/action_syllabusFragment_to_pdfFragment"
+            app:destination="@id/pdfFragment" />
+    </fragment>
     <fragment
         android:id="@+id/taskFragment"
         android:name="com.gopalpoddar4.kubuddy.Fragments.TaskFragment"
@@ -55,12 +63,20 @@
         android:id="@+id/importantQuestionFragment"
         android:name="com.gopalpoddar4.kubuddy.Fragments.ImportantQuestionFragment"
         android:label="fragment_important_question"
-        tools:layout="@layout/fragment_important_question" />
+        tools:layout="@layout/fragment_important_question" >
+        <action
+            android:id="@+id/action_importantQuestionFragment_to_pdfFragment"
+            app:destination="@id/pdfFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.gopalpoddar4.kubuddy.Fragments.NotesFragment"
         android:label="fragment_notes"
-        tools:layout="@layout/fragment_notes" />
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_pdfFragment"
+            app:destination="@id/pdfFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.gopalpoddar4.kubuddy.Fragments.SettingFragment"

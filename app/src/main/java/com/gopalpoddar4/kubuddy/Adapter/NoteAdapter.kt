@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.gopalpoddar4.kubuddy.Models.NoteModel
+import com.gopalpoddar4.kubuddy.Interface.OnChildItemClickListner
+import com.gopalpoddar4.kubuddy.Models.ParentModel
 import com.gopalpoddar4.kubuddy.R
 
-class NoteAdapter(private val notes:List<NoteModel>):RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
+class NoteAdapter(private val notes:List<ParentModel>,private val listner: OnChildItemClickListner):RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     class NoteViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val subjectName:TextView=itemView.findViewById(R.id.rcv_item_subject_name)
@@ -31,7 +32,7 @@ class NoteAdapter(private val notes:List<NoteModel>):RecyclerView.Adapter<NoteAd
         if (notes[position].isExpanded){
             holder.childRCV.visibility=View.VISIBLE
             holder.childRCV.layoutManager=LinearLayoutManager(holder.itemView.context)
-            holder.childRCV.adapter=NoteChildAdapter(notes[position].itemList)
+            holder.childRCV.adapter=NoteChildAdapter(notes[position].itemList,listner)
         }else{
 
             holder.childRCV.visibility=View.GONE

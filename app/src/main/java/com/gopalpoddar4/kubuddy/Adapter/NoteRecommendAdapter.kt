@@ -6,11 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.gopalpoddar4.kubuddy.Adapter.NoteAdapter.NoteViewHolder
-import com.gopalpoddar4.kubuddy.Models.RecomendNoteModel
+import com.gopalpoddar4.kubuddy.Models.RecommendModel
 import com.gopalpoddar4.kubuddy.R
 
-class NoteRecommendAdapter (private val recomendNote:List<RecomendNoteModel>):RecyclerView.Adapter<NoteRecommendAdapter.RecomendNoteViewModel>(){
+class NoteRecommendAdapter (private val recomendNote:List<RecommendModel>):RecyclerView.Adapter<NoteRecommendAdapter.RecomendNoteViewModel>(){
 
     class RecomendNoteViewModel(itemView:View):RecyclerView.ViewHolder(itemView){
         val subjectName:TextView=itemView.findViewById(R.id.rcv_recomend_subject_name)

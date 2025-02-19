@@ -10,15 +10,16 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gopalpoddar4.kubuddy.Adapter.NoteAdapter
+import com.gopalpoddar4.kubuddy.Interface.OnChildItemClickListner
 import com.gopalpoddar4.kubuddy.Models.ChildModel
-import com.gopalpoddar4.kubuddy.Models.NoteModel
+import com.gopalpoddar4.kubuddy.Models.ParentModel
 import com.gopalpoddar4.kubuddy.R
 
 
-class NotesFragment : Fragment() {
+class NotesFragment : Fragment(),OnChildItemClickListner{
 
     lateinit var noteRecyclerView:RecyclerView
-    lateinit var noteList: ArrayList<NoteModel>
+    lateinit var noteList: ArrayList<ParentModel>
     lateinit var noteAdapter: NoteAdapter
     lateinit var noteBack:ImageView
 
@@ -48,71 +49,13 @@ class NotesFragment : Fragment() {
         noteRecyclerView = view.findViewById(R.id.noteRecyclerview)
         noteRecyclerView.layoutManager = LinearLayoutManager(context)
 
-        noteList= arrayListOf(
-            NoteModel("Bsc IT", listOf(
-                ChildModel("C Programming ( Major )"),
-                ChildModel("Computer Application"),
-                ChildModel("Digital Education"),
-                ChildModel("Yoga"),
-                ChildModel("EVS"),
-                ChildModel("Hindi"),
-                ChildModel("Understanding India")
-            )),
+        noteList= arrayListOf()
 
-            NoteModel("BCA", listOf(
-                ChildModel("Computer Application"),
-                ChildModel("Digital Education"),
-                ChildModel("Yoga"),
-                ChildModel("EVS"),
-                ChildModel("Hindi"),
-                ChildModel("Understanding India")
-            )),
-
-            NoteModel("BBA", listOf(
-                ChildModel("Digital Education"),
-                ChildModel("Yoga"),
-                ChildModel("EVS"),
-                ChildModel("Hindi"),
-                ChildModel("Understanding India")
-            )),
-
-            NoteModel("Math", listOf(
-                ChildModel("Digital Education"),
-                ChildModel("Yoga"),
-                ChildModel("EVS"),
-                ChildModel("Hindi"),
-                ChildModel("Understanding India")
-            )),
-
-            NoteModel("History", listOf(
-                ChildModel("Digital Education"),
-                ChildModel("Yoga"),
-                ChildModel("EVS"),
-                ChildModel("Hindi"),
-                ChildModel("Understanding India")
-            )),
-
-            NoteModel("Physics", listOf(
-                ChildModel("Digital Education"),
-                ChildModel("Yoga"),
-                ChildModel("EVS"),
-                ChildModel("Hindi"),
-                ChildModel("Understanding India")
-            )),
-
-            NoteModel("Chemistry", listOf(
-                ChildModel("Digital Education"),
-                ChildModel("Yoga"),
-                ChildModel("EVS"),
-                ChildModel("Hindi"),
-                ChildModel("Understanding India")
-            ))
-
-
-
-        )
-
-        noteAdapter = NoteAdapter(noteList)
+        noteAdapter = NoteAdapter(noteList,this)
         noteRecyclerView.adapter=noteAdapter
+    }
+
+    override fun onChildItemClick(item: ChildModel) {
+        findNavController().navigate(R.id.action_notesFragment_to_pdfFragment)
     }
 }

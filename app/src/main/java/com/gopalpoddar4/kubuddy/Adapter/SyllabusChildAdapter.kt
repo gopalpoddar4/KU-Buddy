@@ -10,25 +10,26 @@ import com.gopalpoddar4.kubuddy.Interface.OnChildItemClickListner
 import com.gopalpoddar4.kubuddy.Models.ChildModel
 import com.gopalpoddar4.kubuddy.R
 
-class NoteChildAdapter(private val items:List<ChildModel>,private val listner: OnChildItemClickListner):RecyclerView.Adapter<NoteChildAdapter.ChildViewHolder>() {
+class SyllabusChildAdapter( private val items:List<ChildModel>,private val listner: OnChildItemClickListner):RecyclerView.Adapter<SyllabusChildAdapter.SyllabusChildViewHolder>(){
 
-    class ChildViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
+    class SyllabusChildViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val childName:TextView=itemView.findViewById(R.id.childSubjectName)
-        val layoout:CardView=itemView.findViewById(R.id.ChildLayout)
+        val layout:CardView=itemView.findViewById(R.id.ChildLayout)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChildViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SyllabusChildViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.chilc_rcv_layout, parent, false)
-        return ChildViewHolder(view)
+        return SyllabusChildViewHolder(view)
     }
 
     override fun getItemCount(): Int {
         return items.size
     }
 
-    override fun onBindViewHolder(holder: ChildViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SyllabusChildViewHolder, position: Int) {
         val temp:ChildModel=items[position]
         holder.childName.text=temp.subjectName
-        holder.layoout.setOnClickListener {listner.onChildItemClick(temp)}
+
+        holder.layout.setOnClickListener{listner.onChildItemClick(temp) }
     }
 }

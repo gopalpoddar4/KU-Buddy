@@ -6,19 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.gopalpoddar4.kubuddy.Adapter.NoteAdapter
 import com.gopalpoddar4.kubuddy.Adapter.SyllabusAdapter
-import com.gopalpoddar4.kubuddy.Models.NoteModel
-import com.gopalpoddar4.kubuddy.Models.SyllabusModel
+import com.gopalpoddar4.kubuddy.Interface.OnChildItemClickListner
+import com.gopalpoddar4.kubuddy.Models.ChildModel
+import com.gopalpoddar4.kubuddy.Models.ParentModel
 import com.gopalpoddar4.kubuddy.R
 
 
-class SyllabusFragment : Fragment() {
+class SyllabusFragment : Fragment(),OnChildItemClickListner {
+
     lateinit var syllabusRecyclerView: RecyclerView
-   lateinit var syllabusList:ArrayList<SyllabusModel>
+   lateinit var syllabusList:ArrayList<ParentModel>
     lateinit var syllabusAdapter: SyllabusAdapter
     lateinit var syllabusBack: ImageView
 
@@ -32,35 +34,35 @@ class SyllabusFragment : Fragment() {
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
-        requireActivity().window.decorView.systemUiVisibility=
-            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
-        syllabusBack=view.findViewById(R.id.syllabusBack)
-        syllabusBack.setOnClickListener {
-            findNavController().navigateUp()
+            requireActivity().window.decorView.systemUiVisibility=
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+
+            syllabusBack=view.findViewById(R.id.syllabusBack)
+            syllabusBack.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            syllabusRecyclerView=view.findViewById(R.id.syllabusRecyclerview)
+            syllabusRecyclerView.layoutManager= LinearLayoutManager(context)
+            syllabusList= arrayListOf(
+                ParentModel("Common Subject For All", arrayListOf(
+                    ChildModel("English ( AEC )","1PvlkxLk2YKsiIjCm_NMa5F0sPIUwfXgV"),
+                    ChildModel("News Writing & Reporting","1PvlkxLk2YKsiIjCm_NMa5F0sPIUwfXgV"),
+                    ChildModel("Communication Skill & Per. Dev.","1PvlkxLk2YKsiIjCm_NMa5F0sPIUwfXgV")
+                ))
+            )
+            syllabusAdapter= SyllabusAdapter(syllabusList,this)
+            syllabusRecyclerView.adapter=syllabusAdapter
+
+
         }
 
-        syllabusRecyclerView=view.findViewById(R.id.syllabusRecyclerview)
-        syllabusRecyclerView.layoutManager= LinearLayoutManager(context)
-        syllabusList= arrayListOf(
-            SyllabusModel("Digital Education"),
-            SyllabusModel("Hindi"),
-            SyllabusModel("English"),
-            SyllabusModel("EDP"),
-            SyllabusModel("Political Science"),
-            SyllabusModel("History"),
-            SyllabusModel("Secience"),
-            SyllabusModel("Physics"),
-            SyllabusModel("Biology"),
-            SyllabusModel("Math"),
-            SyllabusModel("Digital Education"),
-
-            )
-        syllabusAdapter= SyllabusAdapter(syllabusList)
-        syllabusRecyclerView.adapter=syllabusAdapter
+    override fun onChildItemClick(item: ChildModel) {
+        findNavController().navigate(R.id.action_syllabusFragment_to_pdfFragment)
     }
 
 
