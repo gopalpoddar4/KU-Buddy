@@ -56,6 +56,7 @@ class NotesFragment : Fragment(),OnChildItemClickListner{
     }
 
     override fun onChildItemClick(item: ChildModel) {
-        findNavController().navigate(R.id.action_notesFragment_to_pdfFragment)
+        val action=NotesFragmentDirections.actionNotesFragmentToPdfFragment(item)
+        findNavController().navigate(action)
     }
 }

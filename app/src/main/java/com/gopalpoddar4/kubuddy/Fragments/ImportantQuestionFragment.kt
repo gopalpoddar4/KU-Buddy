@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -51,7 +52,8 @@ class ImportantQuestionFragment : Fragment(),OnChildItemClickListner {
     }
 
     override fun onChildItemClick(item: ChildModel) {
-        findNavController().navigate(R.id.action_importantQuestionFragment_to_pdfFragment)
+        val action=ImportantQuestionFragmentDirections.actionImportantQuestionFragmentToPdfFragment(item)
+        findNavController().navigate(action)
     }
 
 

@@ -70,6 +70,7 @@ dependencies {
     implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
     implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 
-    //pdf viewer
+    //lottie animation
+    implementation("com.airbnb.android:lottie:6.6.2")
 
 }

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/fragmentBackgroung"
+    android:paddingHorizontal="25dp"
+    tools:context=".Login">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:gravity="center"
+       android:layout_marginBottom="60dp">
+       <ImageView
+           android:layout_width="170dp"
+           android:layout_height="170dp"
+           android:src="@drawable/kubuddylogo3" />
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Welcome To KU Buddy"
+           android:gravity="center"
+           android:fontFamily="@font/archivo_bold"
+           android:textColor="@color/black"
+           android:textSize="20sp"
+           android:layout_marginTop="25dp"/>
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="First Name"
+           android:layout_marginTop="20dp">
+           <com.google.android.material.textfield.TextInputEditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/enterFirstName"
+               android:inputType="text"/>
+       </com.google.android.material.textfield.TextInputLayout>
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Last Name"
+           android:layout_marginTop="15dp">
+           <com.google.android.material.textfield.TextInputEditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/enterLastName"
+               android:inputType="text"/>
+       </com.google.android.material.textfield.TextInputLayout>
+
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Course"
+           android:layout_marginTop="15dp">
+           <com.google.android.material.textfield.TextInputEditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/enterCourse"
+               android:inputType="text"/>
+       </com.google.android.material.textfield.TextInputLayout>
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Semester"
+           app:counterMaxLength="1"
+           android:layout_marginTop="15dp"
+           >
+           <com.google.android.material.textfield.TextInputEditText
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/enterSemester"
+               android:maxLength="1"
+               android:inputType="number"/>
+       </com.google.android.material.textfield.TextInputLayout>
+
+       <Button
+           android:id="@+id/continueButton"
+           android:layout_width="match_parent"
+           android:layout_height="60dp"
+           android:layout_marginTop="40dp"
+           android:layout_marginBottom="10dp"
+           android:fontFamily="@font/archivo_semibold"
+           android:paddingVertical="5dp"
+           android:text="CONTINUE"
+           android:textColor="@color/white"
+           android:textSize="18dp"
+           app:cornerRadius="8dp" />
+   </LinearLayout>
+
+
+</LinearLayout>

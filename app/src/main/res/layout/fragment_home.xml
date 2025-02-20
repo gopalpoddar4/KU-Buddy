@@ -34,6 +34,7 @@
                 android:textStyle="bold"
                 android:text="Welcome"/>
             <TextView
+                android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -51,6 +52,7 @@
             android:src="@drawable/setting" />
     </LinearLayout>
     <TextView
+        android:id="@+id/userCourse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Bsc.IT"
@@ -60,6 +62,7 @@
         android:textColor="@color/white"/>
 
     <TextView
+        android:id="@+id/userSemester"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
@@ -230,7 +233,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/examDateButton"
+            android:id="@+id/videoButton"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_margin="8dp"
@@ -249,14 +252,14 @@
                     android:layout_height="30dp"
                     android:layout_marginEnd="3dp"
                     android:layout_marginStart="15dp"
-                    android:src="@drawable/date"/>
+                    android:src="@drawable/video"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Exam Date"
+                    android:text="Video"
                     android:fontFamily="@font/archivo_bold"
                     android:textStyle="bold"
-                    android:layout_marginStart="3dp"
+                    android:layout_marginStart="4dp"
                     android:textColor="@color/black"
                     android:textSize="19sp"/>
 

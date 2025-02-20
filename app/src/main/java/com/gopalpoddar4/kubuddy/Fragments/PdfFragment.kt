@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
+import com.gopalpoddar4.kubuddy.Models.ChildModel
 import com.gopalpoddar4.kubuddy.R
 import java.net.URLEncoder
 
@@ -16,6 +18,7 @@ class PdfFragment : Fragment() {
 
 lateinit var webView: WebView
 lateinit var pdfKeyId:String
+lateinit var pdfName:String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +32,13 @@ lateinit var pdfKeyId:String
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val pdfData:ChildModel=PdfFragmentArgs.fromBundle(requireArguments()).pdf
+        pdfName=pdfData.subjectName
+        pdfKeyId=pdfData.PDF_ID
+
+        val PdfName=view.findViewById<TextView>(R.id.pdfName)
+        PdfName.text=pdfName
+
         val pdfBack = view.findViewById<ImageView>(R.id.pdfBack)
         pdfBack.setOnClickListener(){
             findNavController().navigateUp()
@@ -40,7 +50,7 @@ lateinit var pdfKeyId:String
         webView.settings.allowFileAccess = true    // File access allow karega
         webView.settings.domStorageEnabled = true
 
-        pdfKeyId="1PvlkxLk2YKsiIjCm_NMa5F0sPIUwfXgV"
+
         val pdfurl="https://drive.google.com/file/d/$pdfKeyId/preview"
 
         webView.loadUrl(pdfurl)

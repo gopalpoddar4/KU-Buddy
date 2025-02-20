@@ -34,6 +34,12 @@
         <action
             android:id="@+id/action_homeFragment_to_pdfFragment"
             app:destination="@id/pdfFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_examNewsFragment"
+            app:destination="@id/examNewsFragment" />
     </fragment>
 
     <fragment
@@ -43,7 +49,10 @@
         tools:layout="@layout/fragment_p_y_q" >
         <action
             android:id="@+id/action_PYQFragment_to_pdfFragment"
-            app:destination="@id/pdfFragment" />
+            app:destination="@id/pdfFragment">
+            <argument android:name="pdf"
+                app:argType="com.gopalpoddar4.kubuddy.Models.ChildModel"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/syllabusFragment"
@@ -52,7 +61,10 @@
         tools:layout="@layout/fragment_syllabus" >
         <action
             android:id="@+id/action_syllabusFragment_to_pdfFragment"
-            app:destination="@id/pdfFragment" />
+            app:destination="@id/pdfFragment">
+            <argument android:name="pdf"
+                app:argType="com.gopalpoddar4.kubuddy.Models.ChildModel"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/taskFragment"
@@ -66,7 +78,10 @@
         tools:layout="@layout/fragment_important_question" >
         <action
             android:id="@+id/action_importantQuestionFragment_to_pdfFragment"
-            app:destination="@id/pdfFragment" />
+            app:destination="@id/pdfFragment">
+            <argument android:name="pdf"
+                app:argType="com.gopalpoddar4.kubuddy.Models.ChildModel"/>
+        </action>
     </fragment>
     <fragment
         android:id="@+id/notesFragment"
@@ -75,7 +90,11 @@
         tools:layout="@layout/fragment_notes" >
         <action
             android:id="@+id/action_notesFragment_to_pdfFragment"
-            app:destination="@id/pdfFragment" />
+            app:destination="@id/pdfFragment">
+            <argument android:name="pdf"
+                app:argType="com.gopalpoddar4.kubuddy.Models.ChildModel"/>
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
@@ -91,5 +110,19 @@
         android:id="@+id/pdfFragment"
         android:name="com.gopalpoddar4.kubuddy.Fragments.PdfFragment"
         android:label="fragment_pdf"
-        tools:layout="@layout/fragment_pdf" />
+        tools:layout="@layout/fragment_pdf">
+        <argument
+            android:name="pdf"
+            app:argType="com.gopalpoddar4.kubuddy.Models.ChildModel"/>
+    </fragment>
+    <fragment
+        android:id="@+id/examNewsFragment"
+        android:name="com.gopalpoddar4.kubuddy.Fragments.ExamNewsFragment"
+        android:label="fragment_exam_news"
+        tools:layout="@layout/fragment_exam_news" />
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.gopalpoddar4.kubuddy.Fragments.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" />
 </navigation>

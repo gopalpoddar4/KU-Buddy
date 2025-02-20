@@ -52,7 +52,8 @@ class PYQFragment : Fragment(),OnChildItemClickListner {
     }
 
     override fun onChildItemClick(item: ChildModel) {
-        findNavController().navigate(R.id.action_PYQFragment_to_pdfFragment)
+        val action = PYQFragmentDirections.actionPYQFragmentToPdfFragment(item)
+        findNavController().navigate(action)
     }
 
 

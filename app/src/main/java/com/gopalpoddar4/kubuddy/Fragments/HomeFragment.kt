@@ -1,5 +1,6 @@
 package com.gopalpoddar4.kubuddy.Fragments
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -23,7 +24,7 @@ lateinit var updateButton:CardView
 lateinit var syllabusButton:CardView
 lateinit var QuestionButton:CardView
 lateinit var TaskButton:CardView
-lateinit var ExamDateButton:CardView
+lateinit var VideoButton:CardView
 lateinit var ExamNewsButton:CardView
 lateinit var PYQButton:CardView
 
@@ -44,15 +45,33 @@ lateinit var noteList: ArrayList<RecommendModel>
         updateButton=view.findViewById(R.id.updateButton)
         QuestionButton=view.findViewById(R.id.questionButton)
         TaskButton=view.findViewById(R.id.taskButton)
-        ExamDateButton=view.findViewById(R.id.examDateButton)
+       VideoButton=view.findViewById(R.id.videoButton)
         ExamNewsButton=view.findViewById(R.id.examNewsButton)
         PYQButton=view.findViewById(R.id.pyqButton)
+        var userName=view.findViewById<TextView>(R.id.userName)
+        var userCourse=view.findViewById<TextView>(R.id.userCourse)
+        var userSemester=view.findViewById<TextView>(R.id.userSemester)
+
+        val sharedPreferences = requireContext().getSharedPreferences("login",android.content.Context.MODE_PRIVATE)
+        val firstname = sharedPreferences.getString("firstname","User")
+        val lastName = sharedPreferences.getString("lastname","Name")
+        val course = sharedPreferences.getString("course","Bsc.IT")
+        val semester = sharedPreferences.getString("semesterString","2")
+
+        userName.text=firstname+" "+lastName
+        userCourse.text=course
+        userSemester.text="Semester "+semester
 
         val settingBtn = view.findViewById<ImageView>(R.id.settingButton)
         settingBtn.setOnClickListener(){
             findNavController().navigate(R.id.action_homeFragment_to_settingFragment)
         }
-
+        VideoButton.setOnClickListener(){
+            findNavController().navigate(R.id.action_homeFragment_to_videoFragment)
+        }
+        ExamNewsButton.setOnClickListener(){
+            findNavController().navigate(R.id.action_homeFragment_to_examNewsFragment)
+        }
         updateButton.setOnClickListener(){
             findNavController().navigate(R.id.action_homeFragment_to_updateFragment)
         }
@@ -62,11 +81,9 @@ lateinit var noteList: ArrayList<RecommendModel>
         QuestionButton.setOnClickListener(){
             findNavController().navigate(R.id.action_homeFragment_to_importantQuestionFragment)
         }
-
         noteButton.setOnClickListener(){
             findNavController().navigate(R.id.action_homeFragment_to_notesFragment)
         }
-
         syllabusButton.setOnClickListener(){
             findNavController().navigate(R.id.action_homeFragment_to_syllabusFragment)
         }
@@ -87,7 +104,6 @@ lateinit var noteList: ArrayList<RecommendModel>
         recomendNoteAdapter=NoteRecommendAdapter(noteList)
 
         rcvRecomendNote.adapter=recomendNoteAdapter
-
 
         return view
     }

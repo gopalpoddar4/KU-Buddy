@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -62,7 +63,8 @@ class SyllabusFragment : Fragment(),OnChildItemClickListner {
         }
 
     override fun onChildItemClick(item: ChildModel) {
-        findNavController().navigate(R.id.action_syllabusFragment_to_pdfFragment)
+        val action=SyllabusFragmentDirections.actionSyllabusFragmentToPdfFragment(item)
+        findNavController().navigate(action)
     }
 
 
